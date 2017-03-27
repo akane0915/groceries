@@ -5,12 +5,20 @@ $(document).ready(function(){
 
     var inputs = ["item0", "item1", "item2", "item3"];
 
-    var unsorted = inputs.map(function(input){
+    var sorted = inputs.map(function(input){
       return $("#" + input).val().toLowerCase();
+    }).sort();
+
+    var uppercase = sorted.map(function(input){
+      return input.toUpperCase();
     });
 
-    unsorted.forEach(function(item) {
-      $("#unsorted-list").append("<li>"+item+"</li>");
+    sorted.forEach(function(item) {
+      $("#sorted-list").append("<li>"+item+"</li>");
+    });
+
+    uppercase.forEach(function(item){
+      $("#uppercase-list").append("<li>"+item+"</li>");
     });
 
   });
